@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+#[\AllowDynamicProperties]
 class BaseModel {
 
     protected $table;
@@ -98,6 +99,11 @@ class BaseModel {
     }
 
     private function getClassName($classname) {
+        if(strpos($classname, '\\') === false) {
+            //not in a namespace
+            return $classname;
+        }
+        //in a namespace
         return (substr($classname, strrpos($classname, '\\') + 1));
     }
     

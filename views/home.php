@@ -1,2 +1,1 @@
-<h1>Base MVC</h1>
-<p>Welcome to this base mvc project.</p>
+<h1>Welcome to BookSphere</h1>

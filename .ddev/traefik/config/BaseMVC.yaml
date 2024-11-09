@@ -1,0 +1,77 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    BaseMVC-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^basemvc\.ddev\.site$`)
+      
+      service: "BaseMVC-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "BaseMVC-redirectHttps"
+    BaseMVC-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^basemvc\.ddev\.site$`)
+      
+      service: "BaseMVC-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "BaseMVC-redirectHttps"
+    
+    
+    
+    BaseMVC-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^basemvc\.ddev\.site$`)
+      
+      service: "BaseMVC-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    BaseMVC-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^basemvc\.ddev\.site$`)
+      
+      service: "BaseMVC-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    BaseMVC-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    BaseMVC-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-BaseMVC-web:80
+        
+    BaseMVC-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-BaseMVC-web:8025
+        
+    
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/BaseMVC.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/BaseMVC.key

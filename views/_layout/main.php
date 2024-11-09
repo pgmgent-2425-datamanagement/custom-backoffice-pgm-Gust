@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/css/main.css?v=<?php if( $_ENV['DEV_MODE'] == "true" ) { echo time(); }; ?>">
 </head>
 <body>
-    <div class="brand">BrandName</div>
+    <div class="brand">BookSphere</div>
 
     <nav>
         <a href="/">Home</a>
-        <a href="#">item 2</a>
+        <a href="/books">Books</a>
+        <a href="/book/add">Add form</a>
         <a href="#">item 3</a>
         <a href="#">item 4</a>
     </nav>
@@ -22,7 +23,7 @@
     </main>
     
     <footer>
-        &copy; <?= date('Y'); ?> - BrandName
+        &copy; <?= date('Y'); ?> - BooksBib
     </footer>
 </body>
 </html>

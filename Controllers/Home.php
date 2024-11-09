@@ -6,7 +6,7 @@ class HomeController extends BaseController {
 
     public static function index () {
 
-        self::loadView('/home', [
+        self::loadView('home', [
             'title' => 'Homepage'
         ]);
     }
