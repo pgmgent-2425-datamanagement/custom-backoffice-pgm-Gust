@@ -94,3 +94,164 @@ h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
+/* Formulier container stijl */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input en textarea styling */
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+/* Meervoudige selectie lijst */
+select {
+    height: auto;
+    min-height: 40px;
+}
+
+/* Submit-knop styling */
+input[type="submit"] {
+    width: 100%;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Formulier focus styling */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Boekdetail container */
+.book-details {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+/* Titel stijl */
+.book-details h1 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Algemene paragraaf stijl */
+.book-details p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Vetgedrukte labels */
+.book-details p strong {
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+/* Genre lijst stijl */
+.book-details p strong:after {
+    content: " ";
+}
+
+/* Verwijderknop stijl */
+.book-details form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book-details input[type="submit"] {
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.book-details input[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Bewerk link stijl */
+.edit-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #3498db;
+    color: #fff;
+}
