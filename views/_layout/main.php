@@ -25,5 +25,7 @@
     <footer>
         &copy; <?= date('Y'); ?> - BooksBib
     </footer>
+
+    
 </body>
 </html>

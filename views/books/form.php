@@ -13,6 +13,19 @@
             <textarea name="description" rows=6></textarea>
         </label>
     </p>
+    <p>
+    <label>
+        Author
+        <input type="text" name="author" placeholder="Enter author's name" value="">
+    </label>
+</p>
+
+    <p>
+        <label>
+            Published Date
+            <input type="text" name="published_year" placeholder="YYYY" value="" pattern="\d{4}" title="Please enter a valid year (4 digits)" required>
+        </label>
+    </p>
     <input type="submit" value="Save">
 </form>
 
