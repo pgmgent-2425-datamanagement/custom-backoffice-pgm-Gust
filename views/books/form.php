@@ -3,20 +3,20 @@
 <form method="POST">
     <p>
         <label>
-            Name
-            <input type="text" name="title" placeholder="..." value="">
+            Title
+            <input type="text" name="title" placeholder="Title of the book" value="" required>
         </label>
     </p>
     <p>
         <label>
             Description
-            <textarea name="description" rows="6"></textarea>
+            <textarea name="description" rows="6"  placeholder="Enter a description"  required></textarea>
         </label>
     </p>
     <p>
         <label>
             Author
-            <input type="text" name="author" placeholder="Enter author's name" value="">
+            <input type="text" name="author" placeholder="Enter author's name" value="" required>
         </label>
     </p>
     <p>
@@ -29,7 +29,7 @@
         <label>Genres:</label>
         <?php foreach ($genres as $genre): ?>
             <label>
-                <input type="checkbox" name="genres[]" value="<?= $genre['id']; ?>">
+                <input type="checkbox" name="genres[]" required value="<?= $genre['id']; ?>">
                 <?= htmlspecialchars($genre['name']); ?>
             </label>
         <?php endforeach; ?>

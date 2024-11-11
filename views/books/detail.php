@@ -1,6 +1,9 @@
 <h1><?= htmlspecialchars($book->title); ?></h1>
-<p><?= htmlspecialchars($book->description); ?></p>
+
+<p><strong>Description:</strong> <?= htmlspecialchars($book->description); ?></p>
+
 <p><strong>Author:</strong> <?= htmlspecialchars($author['name']); ?></p>
+
 <p><strong>Published Year:</strong> <?= htmlspecialchars($book->published_year); ?></p>
 
 <p><strong>Genre:</strong>
