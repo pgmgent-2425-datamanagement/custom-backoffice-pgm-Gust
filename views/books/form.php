@@ -26,14 +26,15 @@
         </label>
     </p>
     <p>
-        <label>
-            Genres
-            <select name="genres[]" multiple>
-                <?php foreach ($genres as $genre): ?>
-                    <option value="<?= $genre['id']; ?>"><?= $genre['name']; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </label>
+        <label>Genres:</label>
+        <?php foreach ($genres as $genre): ?>
+            <label>
+                <input type="checkbox" name="genres[]" value="<?= $genre['id']; ?>">
+                <?= htmlspecialchars($genre['name']); ?>
+            </label>
+        <?php endforeach; ?>
     </p>
+
+    
     <input type="submit" value="Save">
 </form>

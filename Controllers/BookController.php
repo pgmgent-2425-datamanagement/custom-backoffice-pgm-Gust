@@ -98,22 +98,17 @@ class BookController extends BaseController {
     }
     public static function delete($id) {
         global $db;
-        
-        // Debug output
-        var_dump($id);  // Controleer of het juiste boek-ID wordt doorgegeven
-    
-        // Verwijder eerst de gerelateerde records in de book_genre-tabel
+
         $stmt = $db->prepare("DELETE FROM book_genre WHERE book_id = :id");
         $stmt->execute([':id' => $id]);
     
-        // Verwijder vervolgens het boek uit de books-tabel
         $stmt = $db->prepare("DELETE FROM books WHERE id = :id");
         $stmt->execute([':id' => $id]);
     
-        // Redirect terug naar de lijst van boeken
         header('Location: /books');
         exit;
     }
+    
 
     public static function edit($id) {
         global $db;

@@ -1,11 +1,9 @@
-/* Algemeen reset voor marges en paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body stijl */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -13,7 +11,6 @@ body {
     color: #333;
 }
 
-/* Merknaam stijl */
 .brand {
     font-size: 2.5rem;
     font-weight: bold;
@@ -23,7 +20,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Navigatiebalk */
 nav {
     display: flex;
     justify-content: center;
@@ -45,7 +41,6 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Main content area */
 main {
     max-width: 1100px;
     margin: 0 auto;
@@ -55,19 +50,16 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #2C3E50;
     color: white;
     font-size: 0.9rem;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-/* Styling voor de link in de footer */
 footer a {
     color: #ecf0f1;
     text-decoration: none;
@@ -95,7 +87,6 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* Formulier container stijl */
 form {
     max-width: 600px;
     margin: 30px auto;
@@ -112,7 +103,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Input en textarea styling */
 form p {
     margin-bottom: 20px;
 }
@@ -139,19 +129,16 @@ textarea {
     resize: vertical;
 }
 
-/* Placeholder styling */
 input::placeholder,
 textarea::placeholder {
     color: #aaa;
 }
 
-/* Meervoudige selectie lijst */
 select {
     height: auto;
     min-height: 40px;
 }
 
-/* Submit-knop styling */
 input[type="submit"] {
     width: 100%;
     background-color: #3498db;
@@ -169,7 +156,6 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* Formulier focus styling */
 input[type="text"]:focus,
 textarea:focus,
 select:focus {
@@ -178,7 +164,6 @@ select:focus {
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-/* Boekdetail container */
 .book-details {
     max-width: 600px;
     margin: 30px auto;
@@ -189,7 +174,6 @@ select:focus {
     line-height: 1.6;
 }
 
-/* Titel stijl */
 .book-details h1 {
     font-size: 2rem;
     color: #2C3E50;
@@ -197,25 +181,21 @@ select:focus {
     text-align: center;
 }
 
-/* Algemene paragraaf stijl */
 .book-details p {
     font-size: 1rem;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* Vetgedrukte labels */
 .book-details p strong {
     font-weight: bold;
     color: #2C3E50;
 }
 
-/* Genre lijst stijl */
 .book-details p strong:after {
     content: " ";
 }
 
-/* Verwijderknop stijl */
 .book-details form {
     text-align: center;
     margin-top: 20px;
@@ -237,7 +217,6 @@ select:focus {
     background-color: #c0392b;
 }
 
-/* Bewerk link stijl */
 .edit-btn {
     display: inline-block;
     text-decoration: none;
