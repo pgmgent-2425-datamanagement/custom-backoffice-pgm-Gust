@@ -12,7 +12,7 @@
 
     <nav>
         <a href="/">Home</a>
-        <a href="/books">Books</a>
+        <a href="/books">All Books</a>
         <a href="/book/add">Add Book</a>
     </nav>
 

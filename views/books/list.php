@@ -14,7 +14,7 @@ if (isset($_GET['sort'])) {
 }
 ?>
 
-<h1>Books</h1>
+<h1>All Books</h1>
 
 <form method="GET" action="">
     <label>Search
