@@ -45,8 +45,7 @@ class BookController extends BaseController {
     public static function add() {
         global $db;
 
-        $stmt = $db->prepare("SELECT * FROM genres");
-        $stmt->execute();
+        $stmt = $db->query("SELECT * FROM genres");
         $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         self::loadView('books/form', [
@@ -125,8 +124,7 @@ class BookController extends BaseController {
             exit;
         }
 
-        $stmt = $db->prepare("SELECT * FROM genres");
-        $stmt->execute();
+        $stmt = $db->query("SELECT * FROM genres");
         $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $stmt = $db->prepare("SELECT genre_id FROM book_genre WHERE book_id = :id");
