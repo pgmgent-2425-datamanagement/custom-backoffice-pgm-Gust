@@ -19,20 +19,3 @@ De database voor deze applicatie is ontworpen met de volgende kernentiteiten:
 - **Uitgevers**: Informatie over de uitgeverijen die verantwoordelijk zijn voor het uitgeven van de boeken.
 
 De relaties zijn gedefinieerd zodat een boek meerdere genres kan hebben en een auteur verschillende boeken kan hebben.
-
-## Inloggen op de Backoffice
-
-Om toegang te krijgen tot de backoffice, gebruik de volgende inloggegevens:
-
-- **URL**: [URL van de Backoffice]
-- **Gebruikersnaam**: `admin`
-- **Wachtwoord**: `password123`
-
-*Let op*: Deze inloggegevens zijn alleen voor testdoeleinden en moeten worden gewijzigd in een productieomgeving voor beveiliging.
-
-## Installatie en Configuratie
-
-1. **Clone de repository**:
-   ```bash
-   git clone https://github.com/[jouw-gebruikersnaam]/project-backoffice.git
-   cd project-backoffice
