@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="brand">BookSphere</div>
 
     <nav>
         <a href="/">Home</a>

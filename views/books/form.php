@@ -29,7 +29,7 @@
         <label>Genres:</label>
         <?php foreach ($genres as $genre): ?>
             <label>
-                <input type="checkbox" name="genres[]" required value="<?= $genre['id']; ?>">
+                <input type="checkbox" name="genres[]" value="<?= $genre['id']; ?>">
                 <?= htmlspecialchars($genre['name']); ?>
             </label>
         <?php endforeach; ?>

@@ -1,3 +1,4 @@
+/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,82 +12,15 @@ body {
     color: #333;
 }
 
-.brand {
-    font-size: 2.5rem;
-    font-weight: bold;
+/* Main title for the page */
+h1 {
+    font-size: 2rem;
     color: #2C3E50;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #3498db;
-    padding: 10px 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    margin: 0 15px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #2980b9;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2C3E50;
-    color: white;
-    font-size: 0.9rem;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #ecf0f1;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.charts-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.chart {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
+/* The search form */
 form {
     max-width: 600px;
     margin: 30px auto;
@@ -94,13 +28,6 @@ form {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 2rem;
-    color: #2C3E50;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 form p {
@@ -156,14 +83,108 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-input[type="text"]:focus,
-textarea:focus,
-select:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+/* Styles for individual books */
+.book-item {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
 }
 
+.book-item h2 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.book-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.book-item a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.book-item a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #3498db;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #2980b9;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Main container */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C3E50;
+    color: white;
+    font-size: 0.9rem;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Chart container */
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for book details */
 .book-details {
     max-width: 600px;
     margin: 30px auto;
@@ -217,6 +238,7 @@ select:focus {
     background-color: #c0392b;
 }
 
+/* Edit button */
 .edit-btn {
     display: inline-block;
     text-decoration: none;
@@ -234,3 +256,4 @@ select:focus {
     background-color: #3498db;
     color: #fff;
 }
+

@@ -45,7 +45,8 @@ class BookController extends BaseController {
     public static function add() {
         global $db;
 
-        $stmt = $db->query("SELECT * FROM genres");
+        $stmt = $db->prepare("SELECT * FROM genres");
+        $stmt->execute();
         $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         self::loadView('books/form', [
@@ -65,7 +66,7 @@ class BookController extends BaseController {
         $stmt = $db->prepare("SELECT id FROM authors WHERE name = :name");
         $stmt->execute([':name' => $authorName]);
         $author = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    
         if ($author) {
             $author_id = $author['id'];
         } else {
@@ -80,22 +81,27 @@ class BookController extends BaseController {
         $book->author_id = $author_id;
         $book->published_year = $publishedYear;
 
-        $succes = $book->save();
+        $success = $book->save();
+    
+        if ($success) {
 
-        if ($succes) {
             $book_id = $db->lastInsertId();
-
+    
             foreach ($genres as $genre_id) {
                 $stmt = $db->prepare("INSERT INTO book_genre (book_id, genre_id) VALUES (:book_id, :genre_id)");
                 $stmt->execute([':book_id' => $book_id, ':genre_id' => $genre_id]);
             }
 
-            header('Location: /books');
             parent::redirect('/books');
+            
         } else {
+            parent::redirect('/books');
+            
             echo 'Error';
         }
     }
+    
+    
     public static function delete($id) {
         global $db;
 
@@ -119,7 +125,8 @@ class BookController extends BaseController {
             exit;
         }
 
-        $stmt = $db->query("SELECT * FROM genres");
+        $stmt = $db->prepare("SELECT * FROM genres");
+        $stmt->execute();
         $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $stmt = $db->prepare("SELECT genre_id FROM book_genre WHERE book_id = :id");
