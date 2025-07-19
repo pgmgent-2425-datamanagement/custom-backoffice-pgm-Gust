@@ -1,4 +1,7 @@
 <?php
+// Error reporting aanzetten voor debuggen
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 //inladen van models, helpers, controllers
 require_once __DIR__ . '/autoload.php';
 

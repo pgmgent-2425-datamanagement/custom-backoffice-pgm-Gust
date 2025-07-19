@@ -16,7 +16,12 @@
     <p>
         <label>
             Author
-            <input type="text" name="author" value="<?= htmlspecialchars($author['name'] ?? ''); ?>" required>
+            <select name="author_id" class="form-select" required>
+                <option value="">Select author</option>
+                <?php foreach ($authors as $a): ?>
+                    <option value="<?= $a['id']; ?>" <?= ($book->author_id == $a['id']) ? 'selected' : ''; ?>><?= htmlspecialchars($a['name']); ?></option>
+                <?php endforeach; ?>
+            </select>
         </label>
     </p>
     <p>
