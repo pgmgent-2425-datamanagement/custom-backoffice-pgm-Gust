@@ -1,39 +1,48 @@
 <h1>Edit Book</h1>
 
-<form method="POST" action="/book/update/<?= $book->id ?>">
+<form method="POST" enctype="multipart/form-data">
     <p>
         <label>
             Title
-            <input type="text" name="title" value="<?= htmlspecialchars($book->title) ?>">
+            <input type="text" name="title" value="<?= htmlspecialchars($book->title); ?>" required>
         </label>
     </p>
     <p>
         <label>
             Description
-            <textarea name="description" rows="6"><?= htmlspecialchars($book->description) ?></textarea>
+            <textarea name="description" rows="6" required><?= htmlspecialchars($book->description); ?></textarea>
         </label>
     </p>
     <p>
         <label>
             Author
-            <input type="text" name="author" value="<?= htmlspecialchars($author['name']) ?>">
+            <input type="text" name="author" value="<?= htmlspecialchars($author['name'] ?? ''); ?>" required>
         </label>
     </p>
     <p>
         <label>
-            Published Year
-            <input type="text" name="published_year" value="<?= htmlspecialchars($book->published_year) ?>">
+            Published Date
+            <input type="text" name="published_year" value="<?= htmlspecialchars($book->published_year); ?>" pattern="\d{4}" title="Please enter a valid year (4 digits)" required>
         </label>
     </p>
     <p>
         <label>Genres:</label>
         <?php foreach ($genres as $genre): ?>
             <label>
-                <input type="checkbox" name="genres[]" value="<?= $genre['id'] ?>"
-                    <?= in_array($genre['id'], $bookGenres) ? 'checked' : '' ?>>
-                <?= htmlspecialchars($genre['name']) ?>
+                <input type="checkbox" name="genres[]" value="<?= $genre['id']; ?>" <?= in_array($genre['id'], $bookGenres) ? 'checked' : ''; ?>>
+                <?= htmlspecialchars($genre['name']); ?>
             </label>
         <?php endforeach; ?>
     </p>
-    <input type="submit" value="Save Changes">
+    <p>
+        <label>
+            Book Image
+            <input type="file" name="image" accept="image/*">
+        </label>
+        <?php if (!empty($book->image)): ?>
+            <br>
+            <img src="/uploads/<?= htmlspecialchars($book->image); ?>" alt="Book Image" style="max-width: 150px; margin-top: 10px;">
+        <?php endif; ?>
+    </p>
+    <input type="submit" value="Save">
 </form>

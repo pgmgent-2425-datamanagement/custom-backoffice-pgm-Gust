@@ -11,7 +11,11 @@ require_once __DIR__ . '/config.php';
 session_start();
 
 //connectie maken met DB
-$db = new PDO($config['db_connection'] . ':dbname=' . $config['db_database'] . ';host=' . $config['db_host'] . ';port=' . $config['db_port'], $config['db_username'], $config['db_password']);
+$db = new PDO(
+    $config['db_connection'] . ':host=' . $config['db_host'] . ';port=' . $config['db_port'] . ';dbname=' . $config['db_database'],
+    $config['db_username'],
+    $config['db_password']
+);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 //router aanmaken, inladen van de routes en runnen

@@ -1,6 +1,6 @@
 <h1>Create Book</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     <p>
         <label>
             Title
@@ -34,7 +34,11 @@
             </label>
         <?php endforeach; ?>
     </p>
-
-    
+    <p>
+        <label>
+            Book Image
+            <input type="file" name="image" accept="image/*">
+        </label>
+    </p>
     <input type="submit" value="Save">
 </form>
