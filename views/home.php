@@ -25,16 +25,20 @@ $yearsData = $stmtYears->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container mb-4">
     <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="card shadow-sm border-0 mb-4">
-                <div class="card-body">
-                    <h2 class="card-title mb-2"><i class="bi bi-house-door-fill text-primary"></i> Welcome to the BookSphere Backoffice</h2>
-                    <p class="card-text">Easily manage your entire book collection, authors, genres, and more. Upload images, view statistics, and keep everything organized. Use the navigation above or the quick action buttons below to get started!</p>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <a href="/books" class="btn btn-primary"><i class="bi bi-book"></i> Manage Books</a>
-                        <a href="/authors" class="btn btn-secondary"><i class="bi bi-person"></i> Manage Authors</a>
-                        <a href="/filemanager" class="btn btn-outline-dark"><i class="bi bi-folder"></i> File Manager</a>
-                        <a href="/book/add" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add New Book</a>
+        <div class="col-lg-8 col-xl-7">
+            <div class="card shadow-sm border-0 mb-4 welcome-card" style="background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%); border-radius: 1rem;">
+                <div class="card-body py-4 px-3 text-center">
+                    <div class="mb-2">
+                        <i class="bi bi-house-door-fill text-primary" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="card-title mb-2 fw-bold">Welcome to the BookSphere Backoffice</h3>
+                    <div class="mb-2 text-primary-emphasis small">Your central hub for book management</div>
+                    <p class="card-text mb-3">Manage your books, authors, genres, and uploads in one place. Use the quick action buttons below to get started!</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mt-2">
+                        <a href="/books" class="btn btn-primary px-3 py-2 welcome-btn"><i class="bi bi-book"></i> Books</a>
+                        <a href="/authors" class="btn btn-secondary px-3 py-2 welcome-btn"><i class="bi bi-person"></i> Authors</a>
+                        <a href="/filemanager" class="btn btn-outline-dark px-3 py-2 welcome-btn"><i class="bi bi-folder"></i> Files</a>
+                        <a href="/book/add" class="btn btn-success px-3 py-2 welcome-btn"><i class="bi bi-plus-circle"></i> Add Book</a>
                     </div>
                 </div>
             </div>
@@ -101,6 +105,22 @@ $yearsData = $stmtYears->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
+
+<style>
+.welcome-card {
+    box-shadow: 0 4px 24px rgba(30,64,175,0.06) !important;
+    border: none !important;
+}
+.welcome-btn {
+    transition: transform 0.13s cubic-bezier(.4,0,.2,1), box-shadow 0.13s cubic-bezier(.4,0,.2,1);
+    font-size: 1rem;
+}
+.welcome-btn:hover, .welcome-btn:focus {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 2px 8px rgba(30,64,175,0.10);
+    z-index: 2;
+}
+</style>
 
 <script>
     // Chart 1: Books per Genre
