@@ -24,17 +24,19 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 py-2 rounded<?= ($_SERVER['REQUEST_URI'] == '/' ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/" style="transition: background 0.2s;">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/books') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/books" style="transition: background 0.2s;">Books</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/books') === 0 || strpos($_SERVER['REQUEST_URI'], '/book/add') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="#" id="booksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="transition: background 0.2s;">Books</a>
+                        <ul class="dropdown-menu" aria-labelledby="booksDropdown">
+                            <li><a class="dropdown-item" href="/books">All Books</a></li>
+                            <li><a class="dropdown-item" href="/book/add">Add Book</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/book/add') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/book/add" style="transition: background 0.2s;">New Book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/authors') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/authors" style="transition: background 0.2s;">Authors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/author/add') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/author/add" style="transition: background 0.2s;">New Author</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/authors') === 0 || strpos($_SERVER['REQUEST_URI'], '/author/add') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="#" id="authorsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="transition: background 0.2s;">Authors</a>
+                        <ul class="dropdown-menu" aria-labelledby="authorsDropdown">
+                            <li><a class="dropdown-item" href="/authors">All Authors</a></li>
+                            <li><a class="dropdown-item" href="/author/add">Add Author</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 py-2 rounded<?= (strpos($_SERVER['REQUEST_URI'], '/filemanager') === 0 ? ' active fw-bold text-white shadow-sm' : '') ?>" href="/filemanager" style="transition: background 0.2s;">File Manager</a>
