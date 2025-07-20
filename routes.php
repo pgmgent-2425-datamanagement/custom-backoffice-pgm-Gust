@@ -18,3 +18,6 @@ $router->post('/author/add', 'AuthorController@save');
 $router->get('/author/edit/(\d+)', 'AuthorController@edit');
 $router->post('/author/edit/(\d+)', 'AuthorController@update');
 $router->post('/author/delete/(\d+)', 'AuthorController@delete'); 
+
+$router->get('/api/books', 'ApiBookController@list');
+$router->post('/api/comments', 'ApiBookController@addComment'); 
