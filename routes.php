@@ -21,3 +21,5 @@ $router->post('/author/delete/(\d+)', 'AuthorController@delete');
 
 $router->get('/api/books', 'ApiBookController@list');
 $router->post('/api/comments', 'ApiBookController@addComment'); 
+$router->get('/filemanager', 'FileManagerController@index'); 
+$router->post('/filemanager/delete/(.*)', 'FileManagerController@delete'); 

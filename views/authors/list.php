@@ -12,10 +12,10 @@
         <?php foreach ($authors as $author): ?>
             <tr>
                 <td><?= htmlspecialchars($author['name']); ?></td>
-                <td><?= htmlspecialchars($author['birth_date']); ?></td>
+                <td><?= !empty($author['birth_date']) ? htmlspecialchars($author['birth_date']) : '-'; ?></td>
                 <td>
                     <a href="/author/edit/<?= $author['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
-                    <form action="/author/delete/<?= $author['id']; ?>" method="POST" style="display:inline-block" onsubmit="return confirm('Delete this author?');">
+                    <form action="/author/delete/<?= $author['id']; ?>" method="POST" style="display:inline-block" onsubmit="return confirm('Are you sure you want to delete this author?');">
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
                 </td>
