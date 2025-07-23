@@ -1,16 +1,45 @@
-<h1><?= htmlspecialchars($book->title); ?></h1>
-
-<?php if (!empty($book->image)): ?>
-    <img src="/uploads/<?= htmlspecialchars($book->image); ?>" alt="Book Image" style="max-width: 250px; margin-bottom: 20px; display: block;">
-<?php endif; ?>
-
-<p><strong>Description:</strong> <?= htmlspecialchars($book->description); ?></p>
-<p><strong>Author:</strong> <?= htmlspecialchars($author['name'] ?? ''); ?></p>
-<p><strong>Published Year:</strong> <?= htmlspecialchars($book->published_year); ?></p>
-<p><strong>Genres:</strong> 
-    <?php
-    $genreNames = array_map(function($g) { return htmlspecialchars($g['name']); }, $genres);
-    echo implode(', ', $genreNames);
-    ?>
-</p>
-<a href="/books" class="btn btn-secondary">Back to list</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="card shadow-lg border-0 mb-4">
+                <div class="row g-0 align-items-center">
+                    <?php if (!empty($book->image)): ?>
+                        <div class="col-md-4 text-center p-4">
+                            <img src="/uploads/<?= htmlspecialchars($book->image); ?>" alt="Book Image" class="img-fluid rounded shadow-sm mb-3" style="max-height: 320px; object-fit: cover;">
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-md-8 p-4">
+                        <h2 class="card-title mb-2 text-primary fw-bold">
+                            <i class="bi bi-book-half me-2"></i><?= htmlspecialchars($book->title); ?>
+                        </h2>
+                        <div class="mb-3 text-muted small">
+                            <span class="me-3"><i class="bi bi-person"></i> <?= htmlspecialchars($author['name'] ?? ''); ?></span>
+                            <span class="me-3"><i class="bi bi-calendar"></i> <?= htmlspecialchars($book->published_year); ?></span>
+                        </div>
+                        <div class="mb-3">
+                            <?php
+                            $genreNames = array_map(function($g) { return htmlspecialchars($g['name']); }, $genres);
+                            foreach ($genres as $genre) {
+                                echo '<span class="badge bg-secondary me-1 mb-1"><i class="bi bi-tag"></i> ' . htmlspecialchars($genre['name']) . '</span>';
+                            }
+                            ?>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-semibold text-dark mb-1">Description</h6>
+                            <p class="card-text text-body" style="white-space: pre-line;"> <?= htmlspecialchars($book->description); ?></p>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <a href="/books" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to list</a>
+                            <a href="/book/edit/<?= htmlspecialchars($book->id); ?>" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
+                            <form action="/book/delete/<?= htmlspecialchars($book->id); ?>" method="POST" style="display:inline-block" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

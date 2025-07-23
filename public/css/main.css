@@ -696,7 +696,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -1509,6 +1509,22 @@ progress {
   .gy-lg-5 {
     --bs-gutter-y: 3rem;
   }
+}
+
+/* Sticky footer fix */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main.container {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
 }
 @media (min-width: 1200px) {
   .col-xl {
