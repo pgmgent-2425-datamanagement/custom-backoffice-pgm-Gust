@@ -5,7 +5,7 @@
                 <div class="row g-0 align-items-center">
                     <?php if (!empty($book->image)): ?>
                         <div class="col-md-4 text-center p-4">
-                            <img src="/uploads/<?= htmlspecialchars($book->image); ?>" alt="Book Image" class="img-fluid rounded shadow-sm mb-3" style="max-height: 320px; object-fit: cover;">
+                            <img src="/uploads/<?= htmlspecialchars($book->image); ?>" alt="Book Image" class="img-fluid rounded shadow-sm mb-3 book-image">
                         </div>
                     <?php endif; ?>
                     <div class="col-md-8 p-4">
@@ -26,12 +26,13 @@
                         </div>
                         <div class="mb-4">
                             <h6 class="fw-semibold text-dark mb-1">Description</h6>
-                            <p class="card-text text-body" style="white-space: pre-line;"> <?= htmlspecialchars($book->description); ?></p>
+                            <p class="card-text text-body description-text"> <?= htmlspecialchars($book->description); ?></p>
                         </div>
                         <div class="d-flex flex-wrap gap-2 mt-4">
                             <a href="/books" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to list</a>
                             <a href="/book/edit/<?= htmlspecialchars($book->id); ?>" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
-                            <form action="/book/delete/<?= htmlspecialchars($book->id); ?>" method="POST" style="display:inline-block" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                            <form action="/book/delete/<?= htmlspecialchars($book->id); ?>" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                                <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
                                 <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
                             </form>
                         </div>
@@ -41,5 +42,5 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap Icons CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+

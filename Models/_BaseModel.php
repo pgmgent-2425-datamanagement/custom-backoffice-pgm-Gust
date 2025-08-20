@@ -31,7 +31,7 @@ class BaseModel {
                     break;
                 default:
                     //for example: User model => users table
-                    $this->table .= $single . 's';
+                    $this->table = $single . 's';
             }
         }
         if(!isset($this->pk)) {
@@ -88,14 +88,14 @@ class BaseModel {
 
     //static method to call like: Model::deleteById(1);
     private function deleteById ( int $id ) {
-        $sql = 'DELETE FROM `' . $this->table . '` WHERE `' . $id . '` = :p_id';
+        $sql = 'DELETE FROM `' . $this->table . '` WHERE `' . $this->pk . '` = :p_id';
         $pdo_statement = $this->db->prepare($sql);
         return $pdo_statement->execute( [ ':p_id' => $id ] );
     }
 
     //public method to call like: $my_model->delete();
     public function delete () {
-        $this->deleteById( $this->pk );
+        $this->deleteById( $this->{$this->pk} );
     }
 
     private function getClassName($classname) {

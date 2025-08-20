@@ -1,6 +1,5 @@
 <?php
 
-// $router->get('/', function() { echo 'Dit is de index vanuit de route'; });
 $router->setNamespace('\App\Controllers');
 $router->get('/', 'HomeController@index');
 $router->get('/books', 'BookController@list');
@@ -20,6 +19,5 @@ $router->post('/author/edit/(\d+)', 'AuthorController@update');
 $router->post('/author/delete/(\d+)', 'AuthorController@delete'); 
 
 $router->get('/api/books', 'ApiBookController@list');
-$router->post('/api/comments', 'ApiBookController@addComment'); 
 $router->get('/filemanager', 'FileManagerController@index'); 
 $router->post('/filemanager/delete/(.*)', 'FileManagerController@delete'); 

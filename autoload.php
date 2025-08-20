@@ -32,3 +32,4 @@ function loadPhpFiles($dir, $recursive = true) {
 
 loadPhpFiles( __DIR__ . '/Controllers');
 loadPhpFiles( __DIR__ . '/Models');
+loadPhpFiles( __DIR__ . '/helpers');

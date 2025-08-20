@@ -2,7 +2,60 @@
 // $primary: #4a90e2;
 // $font-family-base: 'Segoe UI', Arial, sans-serif;
 
-// Bootstrap importeren
+// Bootstrap import
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Hier kun je je eigen custom styles toevoegen indien nodig
+// Custom styling voor de welcome sectie
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+// Mooie button styling
+.btn-lg {
+  border-radius: 16px !important;
+  font-weight: 500;
+
+  &:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+}
+
+// Icon styling
+.bi.fs-1 {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover .bi.fs-1 {
+  transform: scale(1.1);
+}
+
+// Card styling verbeteringen
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+// Welcome section verbeteringen
+.welcome-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}

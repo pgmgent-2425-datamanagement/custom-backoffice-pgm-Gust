@@ -9,6 +9,7 @@ class BaseController {
     protected $viewParams = [];
     
     public function __construct(){
+        // Set default view path if not specified
         if ( ! $this->viewPath ) { 
             $classname = get_called_class();
             $this->viewPath = str_replace("Controller", '', str_replace("App\\Controllers\\", '', $classname ));
@@ -23,16 +24,18 @@ class BaseController {
         return $obj;
     }
 
-    private function loadView ($view = '', $params = [], $layout = 'main') {
+    protected static function loadView ($view = '', $params = [], $layout = 'main') {
 
-        //maakt variabelen van een array
+        // Extract parameters to make them available in the view
         extract($params);
         
+        // Start output buffering to capture view content
         ob_start();
         include BASE_DIR . "/views/$view.php";
         $content = ob_get_contents();
         ob_end_clean();
 
+        // Load the layout file
         $layout = BASE_DIR . "/views/_layout/$layout.php";
 
         if (file_exists($layout)) {
@@ -42,7 +45,8 @@ class BaseController {
         }
     }
 
-    private function redirect($url, $code = 302) {
+    protected static function redirect($url, $code = 302) {
+        // Redirect to specified URL with optional HTTP status code
         header("Location: " . $url, true, $code);
         exit();
     }

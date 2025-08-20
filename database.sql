@@ -169,7 +169,8 @@ DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE `reviews` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `book_id` bigint(20) DEFAULT NULL,
-  `review` text DEFAULT NULL,
+  `author` varchar(100) NOT NULL,
+  `content` text NOT NULL,
   `rating` tinyint(4) DEFAULT NULL CHECK (`rating` between 1 and 5),
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
